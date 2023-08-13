@@ -1515,3 +1515,298 @@ body {
 .product__detail__dashboard__item:last-child:after {
     content: "";
 }
+
+/* product_detail_item */
+.product__detail__product {
+    display: flex;
+    height: 600px;
+    width: 1200px;
+    margin: -220px auto 0;
+    background-color: #fff;
+    justify-content: space-between;
+    box-shadow: 0px 0px 11px -2px rgba(0, 0, 0, 0.05);
+    border-radius: 2px;
+}
+
+.product__detail__product__left {
+    display: flex;
+    margin: 10px 0 0 10px;
+    width: 100%;
+    max-width: 570px;
+}
+
+.product__detail__product__left-item {
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+}
+
+.product__detail__product__left-img {
+    width: 90px;
+    height: 105px;
+    margin-bottom: 10px;
+}
+
+.product__detail__product__left-img.active {
+    border: 1px solid red  ;
+}
+
+.product__detail__product__left__r-item {
+    max-width: 470px;
+    max-height: 570px;
+    position: relative;
+}
+
+.product__detail__product__left__r-item-img {
+    display: none;
+}
+
+.product__detail__product__left__r-item-img.active {
+    display: block;
+}
+
+.product__detail__product__left__r-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    font-size: 1.2rem;
+    color: #3f3f3f;
+}
+
+.product__detail__product__left__r-btn:hover {
+    cursor: pointer;
+    background-color: #eee;
+    color: #000;
+}
+
+.product__detail__product__left__r-btn-previous {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+}
+
+.product__detail__product__left__r-btn-next {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+}
+
+.product__detail__product__left__r-item-zoom {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    padding: 10px;
+    line-height: normal;
+    color: #747474;
+}
+
+.product__detail__product__left__r-item-zoom:hover {
+    cursor: pointer;
+    background-color: #fff;
+}
+
+/* product__detail__product__right */
+.product__detail__product__right {
+    margin: 10px 10px 0 0;
+    line-height: normal;
+    max-width: 570px;
+    width: 100%;
+}
+
+.product__detail__product__right__price {
+    display: flex;
+    justify-content: space-between;
+}
+
+.product__detail__product__right__price-text {
+    font-size: 2.8rem;
+    font-weight: 600;    
+    color: var(--color-letter);
+}
+
+.product__detail__product__right-item-button {
+    display: flex;
+    margin: 0 -5px;
+}
+
+.product__detail__product__right-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: normal;
+    width: 30px;
+    height: 30px;
+    background-color: #eee;
+    color: var(--color-letter);
+    margin: 0 5px;
+    font-size: 1.2rem;
+    border-radius: 2px;
+    opacity: 0.2;
+}
+
+/* Label */
+.product__detail__product__right__label-wrap {
+    display: flex;
+    font-size: 1.4rem;
+    line-height: normal;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.product__detail__product__right__label {
+    padding: 2px 10px;
+    background-color: #f23434;
+    color: #fff;
+    text-transform: uppercase; 
+    margin-right: 20px;
+}
+
+.product__detail__product__right__label-icon {
+    font-size: 1.2rem;
+}
+
+.product__detail__product__right-start {
+    margin-right: 20px;
+    font-size: 1.4rem;
+}
+
+.product__detail__product__right__review {
+    color: #b8b8b8;
+}
+
+/* sku */
+.product__detail__product__right__sku {
+    margin-top: 25px;
+}
+
+.product__detail__product__right__sku-text {
+    font-size: 1.4rem;
+    color: var(--color-letter);
+    text-transform: uppercase;
+}
+
+.product__detail__product__right__sku-code {
+    font-size: 1.4rem;
+    color: #808080;
+}
+
+.product__detail__product__right__description {
+    margin-top: 20px;
+    font-size: 1.4rem;
+    line-height: 2rem;
+    color: #808080;
+}
+
+.product__detail__product__right__color {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.product__detail__product__right__color-text {
+    color: #808080;
+    margin-right: 30px;
+    text-transform: capitalize;
+    font-size: 1.4rem;
+}
+
+.product__detail__product__right__color-list {
+    display: flex;
+    margin: 0 -5px;
+}
+
+.product__detail__product__right__color-item {
+    width: 30px;
+    height: 30px;
+    margin: 0 5px;
+}
+
+.product__detail__product__right__color-item.green {
+    background-color: #60c38f;
+}
+
+.product__detail__product__right__color-item.blue {
+    background-color: #75d3e1;
+}
+
+.product__detail__product__right__color-item.red {
+    background-color: #f38083;
+}
+
+.product__detail__product__right__color-item.yellow {
+    background-color: #fbaf5d;
+}
+
+.product__detail__product__right__size {
+    display: flex;
+    margin-top: 20px;
+    align-items: center;
+}
+
+.product__detail__product__right__size-text {
+    font-size: 1.4rem;
+    color: #808080;
+    margin-right: 40px;
+    text-transform: capitalize;
+}
+
+.product__detail__product__right__size-choose {
+    font-size: 1.2rem;
+    line-height: normal;
+    padding: 8px 10px;
+    border: 1px solid #eee;
+    outline: none;
+    min-width: 170px;
+    color: #808080;
+}
+
+
+.product__detail__product__right__cart-wrap {
+    margin-top: 20px;
+    display: flex;
+}
+
+.product__detail__product__right__quantity {
+    display: flex;
+}
+
+.product__detail__product__right__quantity-input {
+    max-width: 70px;
+    height: 40px;
+    border: 1px solid #808080;
+    border-right: none;
+    outline: none;
+    font-size: 1.4rem;
+    padding: 10px 20px;
+    color: #808080;
+}
+
+.btn-count {
+    width: 30px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.6rem;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.product__detail__product__right__quantity__button-plus {
+    background-color: #000;
+    color: #747474;
+}
+
+.product__detail__product__right__quantity__button-subtraction {
+    background-color: #808080;
+    color: #fff;
+}
+
+.product__detail__product__right__cart {
+    
+}

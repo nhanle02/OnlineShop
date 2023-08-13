@@ -46,8 +46,13 @@ function showSlide({ slides, duration, initial, stringUrl }, tagHtmls) {
     }, duration)
 }
 
-showSlide({ ...obSlides }, tagSlides)
-showSlide({ ...obAdvertising }, tagAdvertising)
+if(tagSlides) {
+    showSlide({ ...obSlides }, tagSlides)
+}
+
+if (tagAdvertising) {
+    showSlide({ ...obAdvertising }, tagAdvertising)
+}
 
 const tagCateWrap = document.querySelector('.content__product__category')
 const tagCategories = document.querySelectorAll('.content__product__category-title')
@@ -57,21 +62,26 @@ const tagProductList = document.querySelector('.content__product__list__wrap')
 
 let lengthCategory = tagCategories.length
 let indexSlide = 0;
-tagBtnNext.onclick = () => {
-    if (indexSlide >= lengthCategory - 1) {
-        indexSlide = indexSlide
-    } else {
-        indexSlide++;
-        btnNext();
+
+if (tagBtnNext) {
+    tagBtnNext.onclick = () => {
+        if (indexSlide >= lengthCategory - 1) {
+            indexSlide = indexSlide
+        } else {
+            indexSlide++;
+            btnNext();
+        }
     }
 }
 
-tagBtnPrevious.onclick = () => { 
-    if (indexSlide == 0) {
-        indexSlide = 0;
-    } else {
-        indexSlide--;
-        btnPrevious();
+if (tagBtnPrevious) {
+    tagBtnPrevious.onclick = () => { 
+        if (indexSlide == 0) {
+            indexSlide = 0;
+        } else {
+            indexSlide--;
+            btnPrevious();
+        }
     }
 }
 
@@ -167,34 +177,42 @@ function hideAndShow() {
     }
 }
 
-hideAndShow()
+if (tagBtnPrevious) {
+    hideAndShow()
+}   
 
 const tagTestimonial = document.querySelector('.content__testimonial__author')
 const btnNextAuthor = document.querySelector('.content__testimonial__button-next')
 const btnPreviousAuthor = document.querySelector('.content__testimonial__button-previous')
-const lenghtAuthor = tagTestimonial.children.length
+if(tagTestimonial) {
+    var lenghtAuthor = tagTestimonial.children.length
+}   
 
 
 let countAuthor = 0
-btnNextAuthor.onclick = () => {
-    if (countAuthor >= lenghtAuthor - 1) {
-        countAuthor = countAuthor
-    } else {
-        countAuthor++;
-        handleNextAuthor(countAuthor, tagTestimonial, 
-            btnNextAuthor, btnPreviousAuthor, duration = 400,
-            className = 'content__testimonial__author-next');
+if (btnNextAuthor) {
+    btnNextAuthor.onclick = () => {
+        if (countAuthor >= lenghtAuthor - 1) {
+            countAuthor = countAuthor
+        } else {
+            countAuthor++;
+            handleNextAuthor(countAuthor, tagTestimonial, 
+                btnNextAuthor, btnPreviousAuthor, duration = 400,
+                className = 'content__testimonial__author-next');
+        }
     }
-}
+}   
 
-btnPreviousAuthor.onclick = () => {
-    if (countAuthor == 0) {
-        countAuthor = 0;
-    } else {
-        countAuthor--;
-        handlePreviousAuthor(countAuthor, tagTestimonial, 
-            btnNextAuthor, btnPreviousAuthor, duration = 400,
-            className = 'content__testimonial__author-previous');
+if (btnPreviousAuthor) {
+    btnPreviousAuthor.onclick = () => {
+        if (countAuthor == 0) {
+            countAuthor = 0;
+        } else {
+            countAuthor--;
+            handlePreviousAuthor(countAuthor, tagTestimonial, 
+                btnNextAuthor, btnPreviousAuthor, duration = 400,
+                className = 'content__testimonial__author-previous');
+        }
     }
 }
 
@@ -248,29 +266,34 @@ function handlePreviousAuthor(count, tagHtmls, btnNext, btnPrev, duration, class
 const tagBrands = document.querySelector('.content__brand-list')
 const btnNextBrand = document.querySelector('.content__brand__button-next')
 const btnPreviousBrand = document.querySelector('.content__brand__button-previous')
-const lenghtBrand = tagBrands.children.length
-
+if (tagBrands) {
+    var lenghtBrand = tagBrands.children.length
+}
 
 let countBrand = 0
-btnNextBrand.onclick = () => {
-    if (countBrand >= lenghtBrand - 1) {
-        countBrand = countBrand
-    } else {
-        countBrand++;
-        handleNextAuthor(countBrand, tagBrands, 
-            btnNextBrand, btnPreviousBrand, duration = 400,
-            className = 'content__brand-list--next');
+if (btnNextBrand) {
+    btnNextBrand.onclick = () => {
+        if (countBrand >= lenghtBrand - 1) {
+            countBrand = countBrand
+        } else {
+            countBrand++;
+            handleNextAuthor(countBrand, tagBrands, 
+                btnNextBrand, btnPreviousBrand, duration = 400,
+                className = 'content__brand-list--next');
+        }
     }
 }
 
-btnPreviousBrand.onclick = () => {
-    if (countBrand == 0) {
-        countBrand = 0;
-    } else {
-        countBrand--;
-        handlePreviousAuthor(countBrand, tagBrands, 
-            btnNextBrand, btnPreviousBrand, duration = 400,
-            className = 'content__brand-list--previous');
+if (btnPreviousBrand) {
+    btnPreviousBrand.onclick = () => {
+        if (countBrand == 0) {
+            countBrand = 0;
+        } else {
+            countBrand--;
+            handlePreviousAuthor(countBrand, tagBrands, 
+                btnNextBrand, btnPreviousBrand, duration = 400,
+                className = 'content__brand-list--previous');
+        }
     }
 }
 
@@ -279,35 +302,42 @@ const tagHeading = document.querySelector('.lastest__heading-list')
 const tagContent = document.querySelector('.lastest__content-wrapper')
 const btnNextLastest = document.querySelector('.lastest__heading__button-next')
 const btnPrevLastest = document.querySelector('.lastest__heading__button-previous')
-const lenghtHeading = tagHeading.children.length
-let countLastest = 0
 
-//heading
-btnNextLastest.onclick = () => {
-    if (countLastest >= lenghtHeading - 1) {
-        countLastest = countLastest
-    } else {
-        countLastest++;
-        handleNextAuthor(countLastest, tagHeading, 
-            btnNextLastest, btnPrevLastest, duration = 200,
-            className = 'lastest__heading-list--next');
-        handleNextAuthor(countLastest, tagContent, 
-            btnNextLastest, btnPrevLastest, duration = 0,
-            className = 'lastest__content-wrapper--next');
+let countLastest = 0
+if(tagHeading) {
+    var lenghtHeading = tagHeading.children.length
+}
+
+//heading 
+if(btnNextLastest)  {
+    btnNextLastest.onclick = () => {
+        if (countLastest >= lenghtHeading - 1) {
+            countLastest = countLastest
+        } else {
+            countLastest++;
+            handleNextAuthor(countLastest, tagHeading, 
+                btnNextLastest, btnPrevLastest, duration = 200,
+                className = 'lastest__heading-list--next');
+            handleNextAuthor(countLastest, tagContent, 
+                btnNextLastest, btnPrevLastest, duration = 0,
+                className = 'lastest__content-wrapper--next');
+        }
     }
 }
 
-btnPrevLastest.onclick = () => {
-    if (countLastest == 0) {
-        countLastest = 0;
-    } else {
-        countLastest--;
-        handlePreviousAuthor(countLastest, tagHeading, 
-            btnNextLastest, btnPrevLastest, duration = 200,
-            className = 'lastest__heading-list--previous');
-        handlePreviousAuthor(countLastest, tagContent, 
-            btnNextLastest, btnPrevLastest, duration = 0,
-            className = 'lastest__content-wrapper--previous');
+if (btnPrevLastest) {
+    btnPrevLastest.onclick = () => {
+        if (countLastest == 0) {
+            countLastest = 0;
+        } else {
+            countLastest--;
+            handlePreviousAuthor(countLastest, tagHeading, 
+                btnNextLastest, btnPrevLastest, duration = 200,
+                className = 'lastest__heading-list--previous');
+            handlePreviousAuthor(countLastest, tagContent, 
+                btnNextLastest, btnPrevLastest, duration = 0,
+                className = 'lastest__content-wrapper--previous');
+        }
     }
 }
 
@@ -334,7 +364,45 @@ const obFlickImg = [
 ]
 
 const tagFlickImg = document.querySelectorAll('.footer__content__flickr__item-link')
-
-for (let i = 0; i < tagFlickImg.length; i++) {
-    tagFlickImg[i].style.backgroundImage = `url('assets/frontend/image/${obFlickImg[i].img}')`
+if (tagFlickImg) {
+    for (let i = 0; i < tagFlickImg.length; i++) {
+        tagFlickImg[i].style.backgroundImage = `url('assets/frontend/image/${obFlickImg[i].img}')`
+    }
 }
+
+const tagImg = document.querySelectorAll('.product__detail__product__left-img')
+const tagProduct = document.querySelectorAll('.product__detail__product__left__r-item-img')
+const btnNextImg = document.querySelector('.product__detail__product__left__r-btn-next')
+const btnPreImg = document.querySelector('.product__detail__product__left__r-btn-previous')
+if (tagProduct) {
+    var lengthImg = tagProduct.length
+}
+let countImg = 0
+
+// if (btnNextImg) {
+//     btnNextImg.onclick = () => {
+//         if (countImg >= 0 && countImg < lengthImg - 1) {
+//             countImg++
+//             handleNextImg()
+//         } else if (countImg == lengthImg - 1){
+//             countImg = 0
+//             handleNextImg()
+//         }
+//     }
+// }
+
+// function handleNextImg() {
+//     console.log('countImg:', countImg)
+//     tagImg[countImg].classList.add('active')
+//     tagImg[countImg - 1].classList.remove('active')
+
+//     tagProduct[countImg].classList.add('active')
+//     tagProduct[countImg - 1].classList.remove('active')
+//     if (countImg == 0) {
+//         tagImg[countImg].classList.add('active')
+//         tagImg[lengthImg - 1].attributes.class.nodeValue = "product__detail__product__left-img"
+
+//         tagProduct[countImg].classList.add('active')
+//         tagProduct[lengthImg - 1].attributes.class.nodeValue = "product__detail__product__left__r-item-img"
+//     }
+// }
